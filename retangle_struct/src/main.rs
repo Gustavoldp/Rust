@@ -52,6 +52,10 @@ fn main() {
 
         println!("{}",rect1.can_hold(&rect2));
         println!("{}", rect2.can_hold(&rect1));
+
+        //to use associated functions we use the :: sintax with the struct name
+        let square: Rectangle = Rectangle::square(3);
+        println!("{:#?}", square);
         }
     }
 }
@@ -67,5 +71,9 @@ impl Rectangle{
 
     fn can_hold(&self, other: &Rectangle) -> bool{
         self.width > other.width && self.height > other.height
+    }
+    //Associated Functions do not take self as a parameter
+    fn square(size: u32) -> Rectangle{
+        Rectangle { width: size, height: size }
     }
 }
