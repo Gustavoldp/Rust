@@ -61,7 +61,7 @@ fn main() {
             let mut f = File::open("hello.txt")?;
             let mut s = String::new();
             f.read_to_string(&mut s)?;
-            Ok(S)
+            Ok(s)
         }
     }
 
